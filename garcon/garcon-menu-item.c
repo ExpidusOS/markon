@@ -1,7 +1,7 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2006-2010 Jannis Pohlmann <jannis@xfce.org>
- * Copyright (c) 2009-2010 Nick Schermer <nick@xfce.org>
+ * Copyright (c) 2006-2010 Jannis Pohlmann <jannis@expidus.org>
+ * Copyright (c) 2009-2010 Nick Schermer <nick@expidus.org>
  * Copyright (c) 2015      Danila Poyarkov <dannotemail@gmail.com>
  * Copyright (c) 2017      Gregor Santner <gsantner@mailbox.org>
  *
@@ -26,7 +26,7 @@
 #endif
 
 #include <gio/gio.h>
-#include <libxfce4util/libxfce4util.h>
+#include <libexpidus1util/libexpidus1util.h>
 
 #include <garcon/garcon-environment.h>
 #include <garcon/garcon-menu-element.h>
@@ -693,13 +693,13 @@ garcon_menu_item_lists_equal (GList *list1,
 
 
 static gchar *
-garcon_menu_item_url_exec (XfceRc *rc)
+garcon_menu_item_url_exec (ExpidusRc *rc)
 {
   const gchar *url;
   gchar       *url_exec = NULL;
 
   /* Support Type=Link items */
-  url = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_URL, NULL);
+  url = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_URL, NULL);
   if (url != NULL)
     url_exec = g_strdup_printf ("exo-open '%s'", url);
 
@@ -718,7 +718,7 @@ garcon_menu_item_new (GFile *file)
 {
   GarconMenuItem       *item = NULL;
   GarconMenuItemAction *action = NULL;
-  XfceRc               *rc;
+  ExpidusRc               *rc;
   GList                *categories = NULL;
   GList                *keywords = NULL;
   gchar                *filename;
@@ -743,16 +743,16 @@ garcon_menu_item_new (GFile *file)
 
   /* Open the rc file */
   filename = g_file_get_path (file);
-  rc = xfce_rc_simple_open (filename, TRUE);
+  rc = expidus_rc_simple_open (filename, TRUE);
   g_free (filename);
   if (G_UNLIKELY (rc == NULL))
     return NULL;
 
-  xfce_rc_set_group (rc, G_KEY_FILE_DESKTOP_GROUP);
+  expidus_rc_set_group (rc, G_KEY_FILE_DESKTOP_GROUP);
 
   /* Parse name and exec command */
-  name = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
-  exec = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
+  name = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
+  exec = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
 
   /* Support Type=Link items */
   if (G_UNLIKELY (exec == NULL))
@@ -762,16 +762,16 @@ garcon_menu_item_new (GFile *file)
   if (G_LIKELY (exec != NULL && name != NULL))
     {
       /* Determine other application properties */
-      generic_name = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME, NULL);
-      comment = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_COMMENT, NULL);
-      try_exec = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_TRY_EXEC, NULL);
-      icon = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
-      path = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_PATH, NULL);
-      terminal = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_TERMINAL, FALSE);
-      no_display = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY, FALSE);
-      startup_notify = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY, FALSE)
-                       || xfce_rc_read_bool_entry (rc, "X-KDE-StartupNotify", FALSE);
-      hidden = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_HIDDEN, FALSE);
+      generic_name = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME, NULL);
+      comment = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_COMMENT, NULL);
+      try_exec = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_TRY_EXEC, NULL);
+      icon = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
+      path = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_PATH, NULL);
+      terminal = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_TERMINAL, FALSE);
+      no_display = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY, FALSE);
+      startup_notify = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY, FALSE)
+                       || expidus_rc_read_bool_entry (rc, "X-KDE-StartupNotify", FALSE);
+      hidden = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_HIDDEN, FALSE);
 
       /* Allocate a new menu item instance */
       item = g_object_new (GARCON_TYPE_MENU_ITEM,
@@ -790,7 +790,7 @@ garcon_menu_item_new (GFile *file)
                            NULL);
 
       /* Determine the categories this application should be shown in */
-      str_list = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_CATEGORIES, ";");
+      str_list = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_CATEGORIES, ";");
       if (G_LIKELY (str_list != NULL))
         {
           for (mt = str_list; *mt != NULL; ++mt)
@@ -810,7 +810,7 @@ garcon_menu_item_new (GFile *file)
         }
 
       /* Determine the keywords this application should be shown in */
-      str_list = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_KEYWORDS, ";");
+      str_list = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_KEYWORDS, ";");
       if (G_LIKELY (str_list != NULL))
         {
           for (mt = str_list; *mt != NULL; ++mt)
@@ -830,11 +830,11 @@ garcon_menu_item_new (GFile *file)
         }
 
       /* Set the rest of the private data directly */
-      item->priv->only_show_in = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN, ";");
-      item->priv->not_show_in = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN, ";");
+      item->priv->only_show_in = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN, ";");
+      item->priv->not_show_in = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN, ";");
 
       /* Determine this application actions */
-      str_list = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ACTIONS, ";");
+      str_list = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ACTIONS, ";");
       if (G_LIKELY (str_list != NULL))
         {
           for (mt = str_list; *mt != NULL; ++mt)
@@ -843,12 +843,12 @@ garcon_menu_item_new (GFile *file)
                 {
                   /* Set current desktop action group */
                   action_group = g_strdup_printf ("Desktop Action %s", *mt);
-                  xfce_rc_set_group (rc, action_group);
+                  expidus_rc_set_group (rc, action_group);
 
                   /* Parse name and exec command */
-                  name = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
-                  exec = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
-                  icon = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
+                  name = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
+                  exec = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
+                  icon = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
 
                   /* Validate Name and Exec fields, icon is optional */
                   if (G_LIKELY (exec != NULL && name != NULL))
@@ -873,7 +873,7 @@ garcon_menu_item_new (GFile *file)
 
       else
         {
-          str_list = xfce_rc_read_list_entry (rc, "X-Ayatana-Desktop-Shortcuts", ";");
+          str_list = expidus_rc_read_list_entry (rc, "X-Ayatana-Desktop-Shortcuts", ";");
           if (G_LIKELY (str_list != NULL))
             {
               for (mt = str_list; *mt != NULL; ++mt)
@@ -881,11 +881,11 @@ garcon_menu_item_new (GFile *file)
                   if (**mt != '\0')
                     {
                       action_group = g_strdup_printf ("%s Shortcut Group", *mt);
-                      xfce_rc_set_group (rc, action_group);
+                      expidus_rc_set_group (rc, action_group);
 
-                      name = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
-                      exec = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
-                      icon = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
+                      name = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
+                      exec = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
+                      icon = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
 
                       /* Validate Name and Exec fields, icon is optional */
                       if (G_LIKELY (exec != NULL && name != NULL))
@@ -909,7 +909,7 @@ garcon_menu_item_new (GFile *file)
     }
 
   /* Cleanup */
-  xfce_rc_close (rc);
+  expidus_rc_close (rc);
   g_free (url_exec);
 
   return item;
@@ -980,7 +980,7 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
                                    gboolean        *affects_the_outside,
                                    GError         **error)
 {
-  XfceRc               *rc;
+  ExpidusRc               *rc;
   GarconMenuItemAction *action = NULL;
   gboolean              boolean;
   GList                *categories = NULL;
@@ -1005,16 +1005,16 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
 
   /* Open the rc file */
   filename = g_file_get_path (file);
-  rc = xfce_rc_simple_open (filename, TRUE);
+  rc = expidus_rc_simple_open (filename, TRUE);
   g_free (filename);
   if (G_UNLIKELY (rc == NULL))
     return FALSE;
 
-  xfce_rc_set_group (rc, G_KEY_FILE_DESKTOP_GROUP);
+  expidus_rc_set_group (rc, G_KEY_FILE_DESKTOP_GROUP);
 
   /* Check if there is a name and exec key */
-  name = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
-  exec = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
+  name = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
+  exec = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
 
   /* Support Type=Link items */
   if (G_UNLIKELY (exec == NULL))
@@ -1025,7 +1025,7 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
       g_set_error_literal (error, G_KEY_FILE_ERROR,
                            G_KEY_FILE_ERROR_KEY_NOT_FOUND,
                            "Either the name or exec key was not defined.");
-      xfce_rc_close (rc);
+      expidus_rc_close (rc);
 
       return FALSE;
     }
@@ -1048,32 +1048,32 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
 
   garcon_menu_item_set_command (item, exec);
 
-  string = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME, NULL);
+  string = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME, NULL);
   garcon_menu_item_set_generic_name (item, string);
 
-  string = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_COMMENT, NULL);
+  string = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_COMMENT, NULL);
   garcon_menu_item_set_comment (item, string);
 
-  string = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_TRY_EXEC, NULL);
+  string = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_TRY_EXEC, NULL);
   garcon_menu_item_set_try_exec (item, string);
 
-  string = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
+  string = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
   garcon_menu_item_set_icon_name (item, string);
 
-  string = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_PATH, NULL);
+  string = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_PATH, NULL);
   garcon_menu_item_set_path (item, string);
 
-  boolean = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_TERMINAL, FALSE);
+  boolean = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_TERMINAL, FALSE);
   garcon_menu_item_set_requires_terminal (item, boolean);
 
-  boolean = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY, FALSE);
+  boolean = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY, FALSE);
   garcon_menu_item_set_no_display (item, boolean);
 
-  boolean = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY, FALSE)
-            || xfce_rc_read_bool_entry (rc, "X-KDE-StartupNotify", FALSE);
+  boolean = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY, FALSE)
+            || expidus_rc_read_bool_entry (rc, "X-KDE-StartupNotify", FALSE);
   garcon_menu_item_set_supports_startup_notification (item, boolean);
 
-  boolean = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_HIDDEN, FALSE);
+  boolean = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_HIDDEN, FALSE);
   garcon_menu_item_set_hidden (item, boolean);
 
   if (affects_the_outside != NULL)
@@ -1085,7 +1085,7 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
     }
 
   /* Determine the categories this application should be shown in */
-  str_list = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_CATEGORIES, ";");
+  str_list = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_CATEGORIES, ";");
   if (G_LIKELY (str_list != NULL))
     {
       for (mt = str_list; *mt != NULL; ++mt)
@@ -1127,7 +1127,7 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
     }
 
   /* Determine the keywords this application should be shown in */
-  str_list = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_KEYWORDS, ";");
+  str_list = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_KEYWORDS, ";");
   if (G_LIKELY (str_list != NULL))
     {
       for (mt = str_list; *mt != NULL; ++mt)
@@ -1160,14 +1160,14 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
     }
 
   /* Set the rest of the private data directly */
-  item->priv->only_show_in = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN, ";");
-  item->priv->not_show_in = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN, ";");
+  item->priv->only_show_in = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN, ";");
+  item->priv->not_show_in = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN, ";");
 
   /* Update application actions */
   _garcon_g_list_free_full (item->priv->actions, garcon_menu_item_action_unref);
   item->priv->actions = NULL;
 
-  str_list = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ACTIONS, ";");
+  str_list = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ACTIONS, ";");
   if (G_LIKELY (str_list != NULL))
     {
       for (mt = str_list; *mt != NULL; ++mt)
@@ -1176,12 +1176,12 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
             {
               /* Set current desktop action group */
               action_group = g_strdup_printf ("Desktop Action %s", *mt);
-              xfce_rc_set_group (rc, action_group);
+              expidus_rc_set_group (rc, action_group);
 
               /* Parse name and exec command */
-              name = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
-              exec = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
-              icon = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
+              name = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
+              exec = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
+              icon = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
 
               /* Validate Name and Exec fields, icon is optional */
               if (G_LIKELY (exec != NULL && name != NULL))
@@ -1207,7 +1207,7 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
 
   else
     {
-      str_list = xfce_rc_read_list_entry (rc, "X-Ayatana-Desktop-Shortcuts", ";");
+      str_list = expidus_rc_read_list_entry (rc, "X-Ayatana-Desktop-Shortcuts", ";");
       if (G_LIKELY (str_list != NULL))
         {
           for (mt = str_list; *mt != NULL; ++mt)
@@ -1215,11 +1215,11 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
               if (**mt != '\0')
                 {
                   action_group = g_strdup_printf ("%s Shortcut Group", *mt);
-                  xfce_rc_set_group (rc, action_group);
+                  expidus_rc_set_group (rc, action_group);
 
-                  name = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
-                  exec = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
-                  icon = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
+                  name = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
+                  exec = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
+                  icon = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
 
                   /* Validate Name and Exec fields, icon is optional */
                   if (G_LIKELY (exec != NULL && name != NULL))
@@ -1249,7 +1249,7 @@ garcon_menu_item_reload_from_file (GarconMenuItem  *item,
   /* Emit signal to everybody knows we reloaded the file */
   g_signal_emit (G_OBJECT (item), item_signals[CHANGED], 0);
 
-  xfce_rc_close (rc);
+  expidus_rc_close (rc);
   g_free (url_exec);
 
   return TRUE;

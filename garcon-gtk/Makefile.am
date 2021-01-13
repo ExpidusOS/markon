@@ -1,6 +1,6 @@
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
 # 
-# Copyright (c) 2013 Nick Schermer <nick@xfce.org>
+# Copyright (c) 2013 Nick Schermer <nick@expidus.org>
 # 
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
@@ -50,10 +50,10 @@ libgarcon_gtk3_1_la_CFLAGS = \
 	$(GIO_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	$(GTK3_CFLAGS) \
-	$(LIBXFCE4UTIL_CFLAGS) \
+	$(LIBEXPIDUS1UTIL_CFLAGS) \
 	$(GOBJECT_CFLAGS) \
 	$(GTHREAD_CFLAGS) \
-	$(LIBXFCE4UI2_CFLAGS) \
+	$(LIBEXPIDUS1UI2_CFLAGS) \
 	$(PLATFORM_CFLAGS)
 
 libgarcon_gtk3_1_la_LDFLAGS = \
@@ -68,10 +68,10 @@ libgarcon_gtk3_1_la_LIBADD = \
 	$(GIO_LIBS) \
 	$(GLIB_LIBS) \
 	$(GTK3_LIBS) \
-	$(LIBXFCE4UTIL_LIBS) \
+	$(LIBEXPIDUS1UTIL_LIBS) \
 	$(GOBJECT_LIBS) \
 	$(GTHREAD_LIBS) \
-	$(LIBXFCE4UI2_LIBS)
+	$(LIBEXPIDUS1UI2_LIBS)
 
 libgarcon_gtk3_1_la_DEPENDENCIES = \
 	$(top_builddir)/garcon/libgarcon-$(GARCON_VERSION_API).la
@@ -105,7 +105,7 @@ introspection_sources = $(libgarcon_gtk3_1_la_SOURCES)
 GarconGtk-1.0.gir: libgarcon-gtk3-1.la \
 	$(top_builddir)/garcon/Garcon-1.0.gir Makefile
 GarconGtk_1_0_gir_INCLUDES = GObject-2.0 GLib-2.0 Gio-2.0 \
-	Gtk-3.0 Libxfce4util-1.0 Libxfce4ui-2.0
+	Gtk-3.0 Libexpidus1util-1.0 Libexpidus1ui-2.0
 GarconGtk_1_0_gir_CFLAGS = $(AM_CPPFLAGS)
 GarconGtk_1_0_gir_LIBS = libgarcon-gtk3-1.la \
 	$(top_builddir)/garcon/libgarcon-1.la

@@ -2,47 +2,47 @@
   "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
 
 <Menu>
-    <Name>Xfce</Name>
+    <Name>Expidus</Name>
 
     <DefaultAppDirs/>
     <DefaultDirectoryDirs/>
 
     <Include>
-        <Category>X-Xfce-Toplevel</Category>
+        <Category>X-Expidus-Toplevel</Category>
     </Include>
 
     <Layout>
-        <Filename>xfce4-run.desktop</Filename>
+        <Filename>expidus1-run.desktop</Filename>
         <Separator/>
-        <Filename>xfce4-terminal-emulator.desktop</Filename>
-        <Filename>xfce4-file-manager.desktop</Filename>
-        <Filename>xfce4-mail-reader.desktop</Filename>
-        <Filename>xfce4-web-browser.desktop</Filename>
+        <Filename>expidus1-terminal-emulator.desktop</Filename>
+        <Filename>expidus1-file-manager.desktop</Filename>
+        <Filename>expidus1-mail-reader.desktop</Filename>
+        <Filename>expidus1-web-browser.desktop</Filename>
         <Separator/>
         <Menuname>Settings</Menuname>
         <Separator/>
         <Merge type="all"/>
         <Separator/>
-        <Filename>xfce4-about.desktop</Filename>
-        <Filename>xfce4-session-logout.desktop</Filename>
+        <Filename>expidus1-about.desktop</Filename>
+        <Filename>expidus1-session-logout.desktop</Filename>
     </Layout>
 
     <Menu>
         <Name>Settings</Name>
-        <Directory>xfce-settings.directory</Directory>
+        <Directory>expidus-settings.directory</Directory>
         <Include>
             <Category>Settings</Category>
         </Include>
 
         <Layout>
-            <Filename>xfce-settings-manager.desktop</Filename>
+            <Filename>expidus-settings-manager.desktop</Filename>
             <Separator/>
             <Merge type="all"/>
         </Layout>
 
         <Menu>
             <Name>Screensavers</Name>
-            <Directory>xfce-screensavers.directory</Directory>
+            <Directory>expidus-screensavers.directory</Directory>
             <Include>
                 <Category>Screensaver</Category>
             </Include>
@@ -51,7 +51,7 @@
 
     <Menu>
         <Name>Accessories</Name>
-        <Directory>xfce-accessories.directory</Directory>
+        <Directory>expidus-accessories.directory</Directory>
         <Include>
             <Or>
                 <Category>Accessibility</Category>
@@ -62,17 +62,17 @@
         </Include>
         <Exclude>
             <Or>
-                <Filename>xfce4-file-manager.desktop</Filename>
-                <Filename>xfce4-terminal-emulator.desktop</Filename>
-                <Filename>xfce4-about.desktop</Filename>
-                <Filename>xfce4-run.desktop</Filename>
+                <Filename>expidus1-file-manager.desktop</Filename>
+                <Filename>expidus1-terminal-emulator.desktop</Filename>
+                <Filename>expidus1-about.desktop</Filename>
+                <Filename>expidus1-run.desktop</Filename>
             </Or>
         </Exclude>
     </Menu>
 
     <Menu>
         <Name>Development</Name>
-        <Directory>xfce-development.directory</Directory>
+        <Directory>expidus-development.directory</Directory>
         <Include>
             <Category>Development</Category>
         </Include>
@@ -80,7 +80,7 @@
 
     <Menu>
         <Name>Education</Name>
-        <Directory>xfce-education.directory</Directory>
+        <Directory>expidus-education.directory</Directory>
         <Include>
             <Category>Education</Category>
         </Include>
@@ -88,7 +88,7 @@
 
     <Menu>
         <Name>Games</Name>
-        <Directory>xfce-games.directory</Directory>
+        <Directory>expidus-games.directory</Directory>
         <Include>
             <Category>Game</Category>
         </Include>
@@ -96,7 +96,7 @@
 
     <Menu>
         <Name>Graphics</Name>
-        <Directory>xfce-graphics.directory</Directory>
+        <Directory>expidus-graphics.directory</Directory>
         <Include>
             <Category>Graphics</Category>
         </Include>
@@ -104,7 +104,7 @@
 
     <Menu>
         <Name>Multimedia</Name>
-        <Directory>xfce-multimedia.directory</Directory>
+        <Directory>expidus-multimedia.directory</Directory>
         <Include>
             <Category>Audio</Category>
             <Category>Video</Category>
@@ -114,21 +114,21 @@
 
     <Menu>
         <Name>Network</Name>
-        <Directory>xfce-network.directory</Directory>
+        <Directory>expidus-network.directory</Directory>
         <Include>
             <Category>Network</Category>
         </Include>
         <Exclude>
             <Or>
-                <Filename>xfce4-mail-reader.desktop</Filename>
-                <Filename>xfce4-web-browser.desktop</Filename>
+                <Filename>expidus1-mail-reader.desktop</Filename>
+                <Filename>expidus1-web-browser.desktop</Filename>
             </Or>
         </Exclude>
     </Menu>
 
     <Menu>
         <Name>Office</Name>
-        <Directory>xfce-office.directory</Directory>
+        <Directory>expidus-office.directory</Directory>
         <Include>
             <Category>Office</Category>
         </Include>
@@ -136,7 +136,7 @@
 
     <Menu>
         <Name>System</Name>
-        <Directory>xfce-system.directory</Directory>
+        <Directory>expidus-system.directory</Directory>
         <Include>
             <Or>
                 <Category>Emulator</Category>
@@ -145,14 +145,14 @@
         </Include>
         <Exclude>
             <Or>
-                <Filename>xfce4-session-logout.desktop</Filename>
+                <Filename>expidus1-session-logout.desktop</Filename>
             </Or>
         </Exclude>
     </Menu>
 
     <Menu>
         <Name>Other</Name>
-        <Directory>xfce-other.directory</Directory>
+        <Directory>expidus-other.directory</Directory>
         <OnlyUnallocated/>
         <Include>
             <All/>

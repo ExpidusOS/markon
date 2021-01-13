@@ -1,6 +1,6 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2009 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2009 Jannis Pohlmann <jannis@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -222,7 +222,7 @@ main (int    argc,
   gchar            *relative_filename;
   gint              result = EXIT_SUCCESS;
 
-  garcon_set_environment ("XFCE");
+  garcon_set_environment ("EXPIDUS");
 
   if (argc > 1)
     file = g_file_new_for_path (argv[1]);

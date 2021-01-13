@@ -1,6 +1,6 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2007-2009 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2007-2009 Jannis Pohlmann <jannis@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -26,14 +26,14 @@
 #define __GARCON_MENU_ENVIRONMENT_H__
 
 /**
- * GARCON_ENVIRONMENT_XFCE:
+ * GARCON_ENVIRONMENT_EXPIDUS:
  *
  * Macro for garcon_set_environment or garcon_set_environment_xdg
- * to set the Xfce Desktop Environment.
+ * to set the Expidus Desktop Environment.
  *
  * Since: 0.3.0
  **/
-#define GARCON_ENVIRONMENT_XFCE "XFCE"
+#define GARCON_ENVIRONMENT_EXPIDUS "EXPIDUS"
 
 #include <glib.h>
 

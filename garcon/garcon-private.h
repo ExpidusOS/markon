@@ -1,7 +1,7 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2009 Jannis Pohlmann <jannis@xfce.org>
- * Copyright (c) 2009 Nick Schermer <nick@xfce.org>
+ * Copyright (c) 2009 Jannis Pohlmann <jannis@expidus.org>
+ * Copyright (c) 2009 Nick Schermer <nick@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -34,9 +34,9 @@ G_BEGIN_DECLS
 #define _garcon_g_list_free_full(list,free_func) \
   g_list_free_full (list, (GDestroyNotify) free_func)
 
-/* if XDG_MENU_PREFIX is not set, default to "xfce-" so garcon doesn't
- * break when xfce is not started with startxfce4 */
-#define GARCON_DEFAULT_MENU_PREFIX "xfce-"
+/* if XDG_MENU_PREFIX is not set, default to "expidus-" so garcon doesn't
+ * break when expidus is not started with startexpidus1 */
+#define GARCON_DEFAULT_MENU_PREFIX "expidus-"
 
 GFile    *_garcon_file_new_for_unknown_input    (const gchar *path,
                                                  GFile       *parent);

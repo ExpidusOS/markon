@@ -1,6 +1,6 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2007-2010 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2007-2010 Jannis Pohlmann <jannis@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -26,7 +26,7 @@
 #include <unistd.h>
 #endif
 
-#include <libxfce4util/libxfce4util.h>
+#include <libexpidus1util/libexpidus1util.h>
 
 #include <garcon/garcon-config.h>
 #include <garcon/garcon-environment.h>
@@ -2163,7 +2163,7 @@ garcon_menu_file_changed (GarconMenu       *menu,
                                    prefix != NULL ? prefix : GARCON_DEFAULT_MENU_PREFIX,
                                    "applications.menu", NULL);
 
-  /* Get XDG config paths for the root spec (e.g. menus/xfce-applications.menu) */
+  /* Get XDG config paths for the root spec (e.g. menus/expidus-applications.menu) */
   paths = garcon_config_build_paths (relative_filename);
 
   /* Check if the event file has higher priority than the file currently being used */

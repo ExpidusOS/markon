@@ -1,6 +1,6 @@
 /*-
- * Copyright (c) 2009 Jannis Pohlmann <jannis@xfce.org>
- * Copyright (c) 2009 Nick Schermer <nick@xfce.org>
+ * Copyright (c) 2009 Jannis Pohlmann <jannis@expidus.org>
+ * Copyright (c) 2009 Nick Schermer <nick@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public

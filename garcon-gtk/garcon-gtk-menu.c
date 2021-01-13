@@ -1,6 +1,6 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2013 Nick Schermer <nick@xfce.org>
+ * Copyright (c) 2013 Nick Schermer <nick@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,8 +22,8 @@
 #include <config.h>
 #endif
 
-#include <libxfce4util/libxfce4util.h>
-#include <libxfce4ui/libxfce4ui.h>
+#include <libexpidus1util/libexpidus1util.h>
+#include <libexpidus1ui/libexpidus1ui.h>
 
 #include <garcon-gtk/garcon-gtk-menu.h>
 
@@ -350,13 +350,13 @@ garcon_gtk_menu_item_activate_real (GtkWidget            *mi,
   else
     command = (gchar*) garcon_menu_item_get_command (item);
 
-  if (xfce_str_is_empty (command))
+  if (expidus_str_is_empty (command))
     return;
 
   /* expand the field codes */
   icon = garcon_menu_item_get_icon_name (item);
   uri = garcon_menu_item_get_uri (item);
-  command = xfce_expand_desktop_entry_field_codes (command, NULL, icon,
+  command = expidus_expand_desktop_entry_field_codes (command, NULL, icon,
                                                    garcon_menu_item_get_name (item),
                                                    uri,
                                                    garcon_menu_item_requires_terminal (item));
@@ -365,7 +365,7 @@ garcon_gtk_menu_item_activate_real (GtkWidget            *mi,
   /* parse and spawn command */
   if (g_shell_parse_argv (command, NULL, &argv, &error))
     {
-      result = xfce_spawn (gtk_widget_get_screen (mi),
+      result = expidus_spawn (gtk_widget_get_screen (mi),
                            garcon_menu_item_get_path (item),
                            argv, NULL, G_SPAWN_SEARCH_PATH,
                            garcon_menu_item_supports_startup_notification (item),
@@ -377,7 +377,7 @@ garcon_gtk_menu_item_activate_real (GtkWidget            *mi,
 
   if (G_UNLIKELY (!result))
     {
-      xfce_dialog_show_error (NULL, error, _("Failed to execute command \"%s\"."), command);
+      expidus_dialog_show_error (NULL, error, _("Failed to execute command \"%s\"."), command);
       g_error_free (error);
     }
 
@@ -400,14 +400,14 @@ garcon_gtk_menu_item_edit_launcher (GarconMenuItem *item)
       uri = g_file_get_uri (file);
       cmd = g_strdup_printf ("exo-desktop-item-edit \"%s\"", uri);
 
-      if (!xfce_spawn_command_line (NULL, cmd, FALSE, FALSE, TRUE, &error))
+      if (!expidus_spawn_command_line (NULL, cmd, FALSE, FALSE, TRUE, &error))
         {
-          xfce_message_dialog (NULL,
+          expidus_message_dialog (NULL,
                                _("Launch Error"),
                                "dialog-error",
                               _("Unable to launch \"exo-desktop-item-edit\", which is required to create and edit menu items."),
                               error->message,
-                              XFCE_BUTTON_TYPE_MIXED, "window-close-symbolic", _("_Close"), GTK_RESPONSE_ACCEPT,
+                              EXPIDUS_BUTTON_TYPE_MIXED, "window-close-symbolic", _("_Close"), GTK_RESPONSE_ACCEPT,
                               NULL);
 
           g_clear_error (&error);
@@ -484,7 +484,7 @@ garcon_gtk_menu_item_drag_begin (GarconMenuItem *item,
   g_return_if_fail (GARCON_IS_MENU_ITEM (item));
 
   icon_name = garcon_menu_item_get_icon_name (item);
-  if (!xfce_str_is_empty (icon_name))
+  if (!expidus_str_is_empty (icon_name))
     gtk_drag_set_icon_name (drag_context, icon_name, 0, 0);
 }
 
@@ -612,7 +612,7 @@ garcon_gtk_menu_load_icon (const gchar *icon_name)
               gchar *filename;
 
               filename = g_build_filename ("pixmaps", icon_name, NULL);
-              name = xfce_resource_lookup (XFCE_RESOURCE_DATA, filename);
+              name = expidus_resource_lookup (EXPIDUS_RESOURCE_DATA, filename);
               g_free (filename);
             }
 
@@ -663,7 +663,7 @@ garcon_gtk_menu_create_menu_item (gboolean     show_menu_icons,
       image = gtk_image_new ();
     }
 
-  mi = xfce_gtk_image_menu_item_new (name, NULL, NULL, NULL, NULL, image, NULL);
+  mi = expidus_gtk_image_menu_item_new (name, NULL, NULL, NULL, NULL, image, NULL);
 
   return mi;
 }
@@ -793,7 +793,7 @@ garcon_gtk_menu_add (GarconGtkMenu *menu,
             continue;
 
           icon_name = garcon_menu_item_get_icon_name (li->data);
-          if (xfce_str_is_empty (icon_name))
+          if (expidus_str_is_empty (icon_name))
             icon_name = "applications-other";
 
           /* build the menu item */
@@ -827,11 +827,11 @@ garcon_gtk_menu_add (GarconGtkMenu *menu,
           if (menu->priv->show_tooltips)
             {
               comment = garcon_menu_item_get_comment (li->data);
-              if (!xfce_str_is_empty (comment))
+              if (!expidus_str_is_empty (comment))
                 gtk_widget_set_tooltip_text (mi, comment);
             }
 
-          /* support for dnd item to for example the xfce4-panel */
+          /* support for dnd item to for example the expidus1-panel */
           gtk_drag_source_set (mi, GDK_BUTTON1_MASK, dnd_target_list,
               G_N_ELEMENTS (dnd_target_list), GDK_ACTION_COPY);
           g_signal_connect_swapped (G_OBJECT (mi), "drag-begin",
@@ -843,7 +843,7 @@ garcon_gtk_menu_add (GarconGtkMenu *menu,
 
           /* doesn't happen, but anyway... */
           command = garcon_menu_item_get_command (li->data);
-          if (xfce_str_is_empty (command))
+          if (expidus_str_is_empty (command))
             gtk_widget_set_sensitive (mi, FALSE);
 
           /* atleast 1 visible child */
@@ -874,7 +874,7 @@ garcon_gtk_menu_add (GarconGtkMenu *menu,
               name = garcon_menu_element_get_name (li->data);
 
               icon_name = garcon_menu_element_get_icon_name (li->data);
-              if (xfce_str_is_empty (icon_name))
+              if (expidus_str_is_empty (icon_name))
                 icon_name = "applications-other";
 
               /* build the menu item */
@@ -925,7 +925,7 @@ garcon_gtk_menu_load (GarconGtkMenu *menu)
     }
   else
     {
-       xfce_dialog_show_error (NULL, error, _("Failed to load the applications menu"));
+       expidus_dialog_show_error (NULL, error, _("Failed to load the applications menu"));
        g_error_free (error);
     }
 

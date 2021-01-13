@@ -1,6 +1,6 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2009-2010 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2009-2010 Jannis Pohlmann <jannis@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -1020,7 +1020,7 @@ garcon_menu_merger_clean_up_elements (GNode             *node,
       && G_NODE_IS_LEAF (remaining_node))
     {
       /* FIXME Fix empty <DefaultLayout> elements created due to a bug in
-       * alacarte. See http://bugzilla.xfce.org/show_bug.cgi?id=6882#c2
+       * alacarte. See http://bugzilla.expidus.org/show_bug.cgi?id=6882#c2
        * for more information */
       node_ = garcon_menu_node_create (GARCON_MENU_NODE_TYPE_MERGE, 
                                        GUINT_TO_POINTER (GARCON_MENU_LAYOUT_MERGE_MENUS));

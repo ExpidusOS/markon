@@ -2,7 +2,7 @@
 /*-
  * vi:set et ai sts=2 sw=2 cindent:
  *
- * Copyright (c) 2007-2011 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2007-2011 Jannis Pohlmann <jannis@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public

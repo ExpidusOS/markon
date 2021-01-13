@@ -1,6 +1,6 @@
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
 # 
-# Copyright (c) 2007-2010 Jannis Pohlmann <jannis@xfce.org>
+# Copyright (c) 2007-2010 Jannis Pohlmann <jannis@expidus.org>
 # 
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
@@ -84,7 +84,7 @@ libgarcon_1_la_SOURCES =						\
 libgarcon_1_la_CFLAGS = 						\
 	$(GIO_CFLAGS)							\
 	$(GLIB_CFLAGS)							\
-	$(LIBXFCE4UTIL_CFLAGS)						\
+	$(LIBEXPIDUS1UTIL_CFLAGS)						\
 	$(GOBJECT_CFLAGS)						\
 	$(GTHREAD_CFLAGS)						\
 	$(PLATFORM_CFLAGS)
@@ -99,7 +99,7 @@ libgarcon_1_la_LDFLAGS =						\
 libgarcon_1_la_LIBADD = 						\
 	$(GIO_LIBS)							\
 	$(GLIB_LIBS)							\
-	$(LIBXFCE4UTIL_LIBS)						\
+	$(LIBEXPIDUS1UTIL_LIBS)						\
 	$(GOBJECT_LIBS)							\
 	$(GTHREAD_LIBS)
 
@@ -168,7 +168,7 @@ if HAVE_INTROSPECTION
 introspection_sources = $(filter-out %private.h %private.c, $(libgarcon_1_la_SOURCES))
 
 Garcon-1.0.gir: libgarcon-1.la Makefile
-Garcon_1_0_gir_INCLUDES = GObject-2.0 GLib-2.0 Gio-2.0 Libxfce4util-1.0
+Garcon_1_0_gir_INCLUDES = GObject-2.0 GLib-2.0 Gio-2.0 Libexpidus1util-1.0
 Garcon_1_0_gir_CFLAGS = $(AM_CPPFLAGS)
 Garcon_1_0_gir_LIBS = libgarcon-1.la
 Garcon_1_0_gir_FILES = $(introspection_sources)

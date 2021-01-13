@@ -1,7 +1,7 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2006-2010 Jannis Pohlmann <jannis@xfce.org>
- * Copyright (c) 2009      Nick Schermer <nick@xfce.org>
+ * Copyright (c) 2006-2010 Jannis Pohlmann <jannis@expidus.org>
+ * Copyright (c) 2009      Nick Schermer <nick@expidus.org>
  * Copyright (c) 2015      Danila Poyarkov <dannotemail@gmail.com>
  * Copyright (c) 2017      Gregor Santner <gsantner@mailbox.org>
  *

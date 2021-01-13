@@ -1,7 +1,7 @@
 /*-
  * vi:set et ai sts=2 sw=2 cindent:
  *
- * Copyright (c) 2007 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2007 Jannis Pohlmann <jannis@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -193,7 +193,7 @@ main (gint    argc,
   gint    exit_code = EXIT_SUCCESS;
 
   /* Initialize the menu library */
-  garcon_set_environment ("XFCE");
+  garcon_set_environment ("EXPIDUS");
 
   /* Initialize GTK+ */
   gtk_init (&argc, &argv);

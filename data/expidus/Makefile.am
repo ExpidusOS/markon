@@ -1,6 +1,6 @@
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
 #
-# Copyright (c) 2010 Xfce Development Team
+# Copyright (c) 2010 Expidus Development Team
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
@@ -19,24 +19,24 @@
 
 menudir = $(sysconfdir)/xdg/menus
 menu_DATA =								\
-	xfce-applications.menu
+	expidus-applications.menu
 
 directorydir = $(datadir)/desktop-directories
 directory_in_files =							\
-	xfce-accessories.directory.in					\
-	xfce-development.directory.in					\
-	xfce-education.directory.in					\
-	xfce-games.directory.in						\
-	xfce-graphics.directory.in					\
-	xfce-hardware.directory.in					\
-	xfce-multimedia.directory.in					\
-	xfce-network.directory.in					\
-	xfce-office.directory.in					\
-	xfce-other.directory.in						\
-	xfce-personal.directory.in					\
-	xfce-screensavers.directory.in					\
-	xfce-settings.directory.in					\
-	xfce-system.directory.in
+	expidus-accessories.directory.in					\
+	expidus-development.directory.in					\
+	expidus-education.directory.in					\
+	expidus-games.directory.in						\
+	expidus-graphics.directory.in					\
+	expidus-hardware.directory.in					\
+	expidus-multimedia.directory.in					\
+	expidus-network.directory.in					\
+	expidus-office.directory.in					\
+	expidus-other.directory.in						\
+	expidus-personal.directory.in					\
+	expidus-screensavers.directory.in					\
+	expidus-settings.directory.in					\
+	expidus-system.directory.in
 
 directory_DATA = $(directory_in_files:.directory.in=.directory)
 @INTLTOOL_DIRECTORY_RULE@

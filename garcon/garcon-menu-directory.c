@@ -1,6 +1,6 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2006-2009 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2006-2009 Jannis Pohlmann <jannis@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -24,7 +24,7 @@
 
 #include <locale.h>
 #include <glib.h>
-#include <libxfce4util/libxfce4util.h>
+#include <libexpidus1util/libexpidus1util.h>
 
 #include <garcon/garcon-environment.h>
 #include <garcon/garcon-menu-directory.h>
@@ -338,7 +338,7 @@ GarconMenuDirectory *
 garcon_menu_directory_new (GFile *file)
 {
   GarconMenuDirectory *directory = NULL;
-  XfceRc              *rc;
+  ExpidusRc              *rc;
   const gchar         *name;
   const gchar         *comment;
   const gchar         *icon_name;
@@ -350,23 +350,23 @@ garcon_menu_directory_new (GFile *file)
 
  /* Open the rc file */
   filename = g_file_get_path (file);
-  rc = xfce_rc_simple_open (filename, TRUE);
+  rc = expidus_rc_simple_open (filename, TRUE);
   g_free (filename);
   if (G_UNLIKELY (rc == NULL))
     return NULL;
 
-  xfce_rc_set_group (rc, G_KEY_FILE_DESKTOP_GROUP);
+  expidus_rc_set_group (rc, G_KEY_FILE_DESKTOP_GROUP);
 
   /* Parse name, exec command and icon name */
-  name = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
+  name = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_NAME, NULL);
 
   /* If there is no name we must bail out now or segfault later */
   if (G_UNLIKELY (name == NULL))
     return NULL;
 
-  comment = xfce_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_COMMENT, NULL);
-  icon_name = xfce_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
-  no_display = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY, FALSE);
+  comment = expidus_rc_read_entry (rc, G_KEY_FILE_DESKTOP_KEY_COMMENT, NULL);
+  icon_name = expidus_rc_read_entry_untranslated (rc, G_KEY_FILE_DESKTOP_KEY_ICON, NULL);
+  no_display = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY, FALSE);
 
   /* Allocate a new directory instance */
   directory = g_object_new (GARCON_TYPE_MENU_DIRECTORY,
@@ -378,12 +378,12 @@ garcon_menu_directory_new (GFile *file)
                             NULL);
 
   /* Set rest of the private data directly */
-  directory->priv->only_show_in = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN, ";");
-  directory->priv->not_show_in = xfce_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN, ";");
-  directory->priv->hidden = xfce_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_HIDDEN, FALSE);
+  directory->priv->only_show_in = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN, ";");
+  directory->priv->not_show_in = expidus_rc_read_list_entry (rc, G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN, ";");
+  directory->priv->hidden = expidus_rc_read_bool_entry (rc, G_KEY_FILE_DESKTOP_KEY_HIDDEN, FALSE);
 
   /* Cleanup */
-  xfce_rc_close (rc);
+  expidus_rc_close (rc);
 
   return directory;
 }

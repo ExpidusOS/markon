@@ -7,12 +7,12 @@
 
 0.7.3
 =====
-- garcon now needs libxfce4ui/4util 4.15.6+
+- garcon now needs libexpidus1ui/4util 4.15.6+
 - Use the symbolic close icon in the error dialog
 - Don't launch apps as children
 - bump glib (and gio, gthread, etc) minimum to 2.50.0
 - relax automake requirement to 1.15
-- Add new icon needed for xfce4-about-dialog.
+- Add new icon needed for expidus1-about-dialog.
 - Translation Updates:
   Slovenian
 
@@ -27,14 +27,14 @@
 ======
 - Drop support for Gtk2
 - Drop Gtk3 ifdefs
-- Switch to xfce_gtk_image_menu_item
+- Switch to expidus_gtk_image_menu_item
 - Add support for GObject Introspection (Fixes #4)
 - Improve GObject introspection annotations (Fixes #8)
 - Fix missing transfer annotation
 - Field codes expansion API update
-- Transfer some code to libxfce4util
-- Fix default merge rules in xfce-applications.menu (Bug #15504)
-- Rename exo-helpers to the new xfce4-xx ones
+- Transfer some code to libexpidus1util
+- Fix default merge rules in expidus-applications.menu (Bug #15504)
+- Rename exo-helpers to the new expidus1-xx ones
 - Do not add INSTALL in dist tarball
 - Fix a memory leak
 - Switch to README.md and foreign automake mode
@@ -94,7 +94,7 @@
 
 0.6.1
 =====
-- Remove extraneous libxfce4ui-1 check
+- Remove extraneous libexpidus1ui-1 check
 - Fix garcon-2 reference Bug #13543
 - Drop libgarcon-2
 - Make building garcon-gtk2 optional
@@ -157,7 +157,7 @@
 
 0.2.0
 =====
-- Updates for xfce4-run.desktop.
+- Updates for expidus1-run.desktop.
 - Remove xfhelp4.desktop from the menu.
 - Add debugging for file monitoring and reloading.
 - Reduce signal emission on delete events (bug #8671).
@@ -196,10 +196,10 @@
 - A number of small memory leaks have been fixed.
 - Speedup a number of critical code-paths.
 - Use GSList instead of GList where possible.
-- Use XfceRc instead of GKeyFile, this makes garcon depend on
-  libxfce4util, but is faster and more memory efficient.
+- Use ExpidusRc instead of GKeyFile, this makes garcon depend on
+  libexpidus1util, but is faster and more memory efficient.
 - Return an error string instead of freeing it, causing a sefgault in
-  xfce4-panel.
+  expidus1-panel.
 - Do not decrement the internal refcount of items, this should fixed
   the usage of <OnlyUnallocated/>.
 - Translations updates: Chinese (Taiwan), rabic, Romanian, Basque,
@@ -226,10 +226,10 @@
 
 0.1.6
 =====
-- Add <DefaultMergeDirs/> to xfce-applications.menu.
+- Add <DefaultMergeDirs/> to expidus-applications.menu.
 - Also try the garcon install sysconfigdir for config lookups.
 - Use Xdt macros for debugging and linker optimizations.
-- Default menu prefix to "xfce-".
+- Default menu prefix to "expidus-".
 - Fix search order of xdg data directories (bug #7187).
 - Fix ordering of menu items for non-english locales (bug #7414).
 - Monitor non-existing data and config directories (bug #7423).
@@ -282,7 +282,7 @@
   - garcon_menu_element_equal()
   - garcon_menu_item_pool_clear()
   - garcon_menu_item_pool_lookup_file().
-- Add Xfce menu data files from xfdesktop (bug #6272).
+- Add Expidus menu data files from xfdesktop (bug #6272).
 - Remove deprecated encoding key from desktop files.
 - Fix a memory leak in merge file nodes with a filename.
 - Translation updates (bm, ca, da, de, el, es, eu, fi, fr, gl, hu, hr,
@@ -306,10 +306,10 @@
 
 0.1.0
 =====
-- This is a complete rewrite of the former Xfce menu library called
-  libxfce4menu. It covers almost every part of the menu specification
+- This is a complete rewrite of the former Expidus menu library called
+  libexpidus1menu. It covers almost every part of the menu specification
   except for legacy menus and a few XML attributes. In contrast to
-  libxfce4menu, it can also load menus modified with menu editors such
+  libexpidus1menu, it can also load menus modified with menu editors such
   as Alacarte as menu merging is now supported. The only crucial
   feature still missing is monitoring menus and menu items for changes.
   This is something that will be worked on for the next release.

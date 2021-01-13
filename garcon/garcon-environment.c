@@ -1,6 +1,6 @@
 /* vi:set et ai sw=2 sts=2 ts=2: */
 /*-
- * Copyright (c) 2007-2009 Jannis Pohlmann <jannis@xfce.org>
+ * Copyright (c) 2007-2009 Jannis Pohlmann <jannis@expidus.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -45,7 +45,7 @@ static gchar *environment = NULL;
 /**
  * garcon_set_environment:
  * @env : Name of the desktop environment for which menus will
- *        be generated (e.g. XFCE, KDE, GNOME or %NULL).
+ *        be generated (e.g. EXPIDUS, KDE, GNOME or %NULL).
  *
  * Sets (or unsets) the desktop environment for which menus will generated.
  * Menus and menu items belonging to other desktop environments will be
@@ -67,7 +67,7 @@ garcon_set_environment (const gchar *env)
  *
  * Get the environment set with garcon_set_environment().
  *
- * Returns: Name of the desktop environment (e.g. XFCE, KDE, GNOME)
+ * Returns: Name of the desktop environment (e.g. EXPIDUS, KDE, GNOME)
  *          which is used or %NULL.
  */
 const gchar *
@@ -85,7 +85,7 @@ garcon_get_environment (void)
  * Set the desktop environment to the envvar XDG_CURRENT_DESKTOP.
  * If this variables is not set, it falls back to @default_env.
  *
- * For @fallback_env you can use for example #GARCON_ENVIRONMENT_XFCE.
+ * For @fallback_env you can use for example #GARCON_ENVIRONMENT_EXPIDUS.
  *
  * Since: 0.3.0
  */

@@ -1,6 +1,6 @@
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
 #
-# Copyright (c) 2010 Xfce Development Team
+# Copyright (c) 2010 Expidus Development Team
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
@@ -18,4 +18,4 @@
 # Boston, MA 02110-1301, USA.
 
 SUBDIRS =								\
-	xfce
+	expidus

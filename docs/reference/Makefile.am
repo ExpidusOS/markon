@@ -1,6 +1,6 @@
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
 # 
-# Copyright (c) 2009 Jannis Pohlmann <jannis@xfce.org>
+# Copyright (c) 2009 Jannis Pohlmann <jannis@expidus.org>
 # 
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
@@ -69,7 +69,7 @@ AM_CPPFLAGS =	 							\
 	$(GOBJECT_CFLAGS)						\
 	$(GTHREAD_CFLAGS)						\
 	$(GTK_CFLAGS)							\
-	$(LIBXFCE4UTIL_CFLAGS)
+	$(LIBEXPIDUS1UTIL_CFLAGS)
 
 GTKDOC_LIBS =								\
 	$(GIO_LIBS)							\
@@ -77,7 +77,7 @@ GTKDOC_LIBS =								\
 	$(GOBJECT_LIBS)							\
 	$(GTHREAD_LIBS)							\
 	$(GTK_CFLAGS)							\
-	$(LIBXFCE4UTIL_LIBS)						\
+	$(LIBEXPIDUS1UTIL_LIBS)						\
 	$(top_builddir)/garcon/libgarcon-$(GARCON_VERSION_API).la \
 	$(top_builddir)/garcon-gtk/libgarcon-gtk3-1.la
 

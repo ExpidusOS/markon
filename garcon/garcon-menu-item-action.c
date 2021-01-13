@@ -23,7 +23,7 @@
 #endif
 
 #include <gio/gio.h>
-#include <libxfce4util/libxfce4util.h>
+#include <libexpidus1util/libexpidus1util.h>
 
 #include <garcon/garcon-environment.h>
 #include <garcon/garcon-menu-item-action.h>
