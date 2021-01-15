@@ -20,7 +20,7 @@
 AUTOMAKE_OPTIONS = 1.8
 
 # Name of the module
-DOC_MODULE=garcon
+DOC_MODULE=markon
 
 # Top-level SGML file
 DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.xml
@@ -32,8 +32,8 @@ SCANGOBJ_OPTIONS=
 
 # Directory containing the source code
 DOC_SOURCE_DIR= \
-	../../garcon \
-	../../garcon-gtk
+	../../markon \
+	../../markon-gtk
 
 # Extra options to supply to gtkdoc-mkdb
 MKDB_OPTIONS=--sgml-mode --output-format=xml
@@ -43,11 +43,11 @@ FIXXREF_OPTIONS=
 
 # Used for dependencies
 HFILE_GLOB= \
-	$(top_srcdir)/garcon/*.h \
-	$(top_srcdir)/garcon-gtk/*.h
+	$(top_srcdir)/markon/*.h \
+	$(top_srcdir)/markon-gtk/*.h
 CFILE_GLOB= \
-	$(top_srcdir)/garcon/*.c \
-	$(top_srcdir)/garcon-gtk/*.c
+	$(top_srcdir)/markon/*.c \
+	$(top_srcdir)/markon-gtk/*.c
 
 # Extra files to add when scanning (relative to $srcdir)
 EXTRA_HFILES=
@@ -78,8 +78,8 @@ GTKDOC_LIBS =								\
 	$(GTHREAD_LIBS)							\
 	$(GTK_CFLAGS)							\
 	$(LIBEXPIDUS1UTIL_LIBS)						\
-	$(top_builddir)/garcon/libgarcon-$(GARCON_VERSION_API).la \
-	$(top_builddir)/garcon-gtk/libgarcon-gtk3-1.la
+	$(top_builddir)/markon/libmarkon-$(MARKON_VERSION_API).la \
+	$(top_builddir)/markon-gtk/libmarkon-gtk3-1.la
 
 include $(top_srcdir)/gtk-doc.make
 

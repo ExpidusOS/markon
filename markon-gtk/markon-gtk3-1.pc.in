@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+markon_api_version=@MARKON_VERSION_API@
+
+Name: @PACKAGE_TARNAME@
+Description: Freedesktop.org compliant menu library
+Requires: markon-1 gtk+-3.0 libexpidus1ui-2
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lmarkon-gtk3-${markon_api_version}
+Cflags: -I${includedir}/markon-gtk3-${markon_api_version}

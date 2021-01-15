@@ -7,12 +7,12 @@
 # Slavko <linux@slavino.sk>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Garcon\n"
+"Project-Id-Version: Markon\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-20 18:30+0200\n"
 "PO-Revision-Date: 2018-09-14 00:23+0000\n"
 "Last-Translator: Expidus Bot <transifex@expidus.org>\n"
-"Language-Team: Slovak (http://www.transifex.com/expidus/garcon/language/sk/)\n"
+"Language-Team: Slovak (http://www.transifex.com/expidus/markon/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -131,40 +131,40 @@ msgstr "Systém"
 msgid "System tools and utilities"
 msgstr "Systémové nástroje a programy"
 
-#: ../garcon/garcon-menu.c:702
+#: ../markon/markon-menu.c:702
 #, c-format
 msgid "File \"%s\" not found"
 msgstr "Súbor „%s” nenájdený"
 
-#: ../garcon/garcon-menu-parser.c:276
+#: ../markon/markon-menu-parser.c:276
 #, c-format
 msgid "Could not load menu file data from %s: %s"
 msgstr "Nemožno načítať dáta súboru menu z %s: %s"
 
-#: ../garcon/garcon-menu-parser.c:283
+#: ../markon/markon-menu-parser.c:283
 #, c-format
 msgid "Could not load menu file data from %s"
 msgstr "Nemožno načítať dáta súboru menu z %s"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:446
+#: ../markon-gtk/markon-gtk-menu.c:446
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "Zlyhalo spustenie príkazu „%s”."
 
-#: ../garcon-gtk/garcon-gtk-menu.c:472
+#: ../markon-gtk/markon-gtk-menu.c:472
 msgid "Launch Error"
 msgstr "Chyba pri spustení"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:474
+#: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
 "Unable to launch \"exo-desktop-item-edit\", which is required to create and "
 "edit menu items."
 msgstr "Nie je možné spustiť \"exo-desktop-item-edit\". Táto aplikácia je vyžadovaná pri vytváraní a úpravu položiek ponuky."
 
-#: ../garcon-gtk/garcon-gtk-menu.c:476
+#: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"
 msgstr "_Zatvoriť"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:988
+#: ../markon-gtk/markon-gtk-menu.c:988
 msgid "Failed to load the applications menu"
 msgstr "Zlyhalo načítanie menu aplikácií"

@@ -121,17 +121,17 @@ msgstr ""
 msgid "System tools and utilities"
 msgstr ""
 
-#: ../garcon/garcon-menu.c:698
+#: ../markon/markon-menu.c:698
 #, c-format
 msgid "File \"%s\" not found"
 msgstr ""
 
-#: ../garcon/garcon-menu-parser.c:278
+#: ../markon/markon-menu-parser.c:278
 #, c-format
 msgid "Could not load menu file data from %s: %s"
 msgstr "%s ਤੋਂ ਮੇਨੂ ਫਾਇਲ ਡਾਟਾ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ: %s"
 
-#: ../garcon/garcon-menu-parser.c:284
+#: ../markon/markon-menu-parser.c:284
 #, c-format
 msgid "Could not load menu file data from %s"
 msgstr "%s ਤੋਂ ਮੇਨੂ ਫਾਇਲ ਡਾਟਾ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ"

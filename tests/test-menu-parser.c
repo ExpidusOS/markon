@@ -28,7 +28,7 @@
 
 #include <glib.h>
 
-#include <garcon/garcon.h>
+#include <markon/markon.h>
 
 
 
@@ -44,17 +44,17 @@ static gboolean print_node (GNode   *node,
 static const gchar *
 node_name (GNode *node)
 {
-  switch (garcon_menu_node_tree_get_node_type (node))
+  switch (markon_menu_node_tree_get_node_type (node))
     {
-      case GARCON_MENU_NODE_TYPE_MENU: return "Menu"; break;
-      case GARCON_MENU_NODE_TYPE_INCLUDE: return "Include"; break;
-      case GARCON_MENU_NODE_TYPE_EXCLUDE: return "Exclude"; break;
-      case GARCON_MENU_NODE_TYPE_OR: return "Or"; break;
-      case GARCON_MENU_NODE_TYPE_AND: return "And"; break;
-      case GARCON_MENU_NODE_TYPE_NOT: return "Not"; break;
-      case GARCON_MENU_NODE_TYPE_MOVE: return "Move"; break;
-      case GARCON_MENU_NODE_TYPE_DEFAULT_LAYOUT: return "DefaultLayout"; break;
-      case GARCON_MENU_NODE_TYPE_LAYOUT: return "Layout"; break;
+      case MARKON_MENU_NODE_TYPE_MENU: return "Menu"; break;
+      case MARKON_MENU_NODE_TYPE_INCLUDE: return "Include"; break;
+      case MARKON_MENU_NODE_TYPE_EXCLUDE: return "Exclude"; break;
+      case MARKON_MENU_NODE_TYPE_OR: return "Or"; break;
+      case MARKON_MENU_NODE_TYPE_AND: return "And"; break;
+      case MARKON_MENU_NODE_TYPE_NOT: return "Not"; break;
+      case MARKON_MENU_NODE_TYPE_MOVE: return "Move"; break;
+      case MARKON_MENU_NODE_TYPE_DEFAULT_LAYOUT: return "DefaultLayout"; break;
+      case MARKON_MENU_NODE_TYPE_LAYOUT: return "Layout"; break;
       default: return NULL; break;
     }
 }
@@ -85,15 +85,15 @@ print_node (GNode    *node,
 
 #define INDENT {for (i = 0; i < depth; ++i) g_print (" ");}
 
-  if (garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_MENU ||
-      garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_INCLUDE ||
-      garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_EXCLUDE ||
-      garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_OR ||
-      garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_AND ||
-      garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_NOT ||
-      garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_MOVE ||
-      garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_DEFAULT_LAYOUT ||
-      garcon_menu_node_tree_get_node_type (node) == GARCON_MENU_NODE_TYPE_LAYOUT)
+  if (markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_MENU ||
+      markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_INCLUDE ||
+      markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_EXCLUDE ||
+      markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_OR ||
+      markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_AND ||
+      markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_NOT ||
+      markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_MOVE ||
+      markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_DEFAULT_LAYOUT ||
+      markon_menu_node_tree_get_node_type (node) == MARKON_MENU_NODE_TYPE_LAYOUT)
     {
       INDENT; g_print ("<%s>\n", node_name (node));
       print_child_nodes (node, depth);
@@ -101,88 +101,88 @@ print_node (GNode    *node,
     }
   else
     {
-      switch (garcon_menu_node_tree_get_node_type (node))
+      switch (markon_menu_node_tree_get_node_type (node))
         {
-        case GARCON_MENU_NODE_TYPE_NAME:
-          INDENT; g_print ("<Name>%s</Name>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_NAME:
+          INDENT; g_print ("<Name>%s</Name>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_DIRECTORY:
-          INDENT; g_print ("<Directory>%s</Directory>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_DIRECTORY:
+          INDENT; g_print ("<Directory>%s</Directory>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_DIRECTORY_DIR:
-          INDENT; g_print ("<DirectoryDir>%s</DirectoryDir>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_DIRECTORY_DIR:
+          INDENT; g_print ("<DirectoryDir>%s</DirectoryDir>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_DEFAULT_DIRECTORY_DIRS:
+        case MARKON_MENU_NODE_TYPE_DEFAULT_DIRECTORY_DIRS:
           INDENT; g_print ("<DefaultDirectoryDirs/>\n");
           break;
-        case GARCON_MENU_NODE_TYPE_APP_DIR:
-          INDENT; g_print ("<AppDir>%s</AppDir>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_APP_DIR:
+          INDENT; g_print ("<AppDir>%s</AppDir>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_DEFAULT_APP_DIRS:
+        case MARKON_MENU_NODE_TYPE_DEFAULT_APP_DIRS:
           INDENT; g_print ("<DefaultAppDirs/>\n");
           break;
-        case GARCON_MENU_NODE_TYPE_ONLY_UNALLOCATED:
+        case MARKON_MENU_NODE_TYPE_ONLY_UNALLOCATED:
           INDENT; g_print ("<OnlyUnallocated/>\n");
           break;
-        case GARCON_MENU_NODE_TYPE_NOT_ONLY_UNALLOCATED:
+        case MARKON_MENU_NODE_TYPE_NOT_ONLY_UNALLOCATED:
           INDENT; g_print ("<NotOnlyUnallocated/>\n");
           break;
-        case GARCON_MENU_NODE_TYPE_DELETED:
+        case MARKON_MENU_NODE_TYPE_DELETED:
           INDENT; g_print ("<Deleted/>\n");
           break;
-        case GARCON_MENU_NODE_TYPE_NOT_DELETED:
+        case MARKON_MENU_NODE_TYPE_NOT_DELETED:
           INDENT; g_print ("<NotDeleted/>\n");
           break;
-        case GARCON_MENU_NODE_TYPE_FILENAME:
-          INDENT; g_print ("<Filename>%s</Filename>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_FILENAME:
+          INDENT; g_print ("<Filename>%s</Filename>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_CATEGORY:
-          INDENT; g_print ("<Category>%s</Category>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_CATEGORY:
+          INDENT; g_print ("<Category>%s</Category>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_OLD:
-          INDENT; g_print ("<Old>%s</Old>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_OLD:
+          INDENT; g_print ("<Old>%s</Old>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_NEW:
-          INDENT; g_print ("<New>%s</New>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_NEW:
+          INDENT; g_print ("<New>%s</New>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_MENUNAME:
-          INDENT; g_print ("<Menuname>%s</Menuname>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_MENUNAME:
+          INDENT; g_print ("<Menuname>%s</Menuname>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_SEPARATOR:
+        case MARKON_MENU_NODE_TYPE_SEPARATOR:
           INDENT; g_print ("<Separator/>\n");
           break;
-        case GARCON_MENU_NODE_TYPE_MERGE:
+        case MARKON_MENU_NODE_TYPE_MERGE:
           INDENT;
-          switch (garcon_menu_node_tree_get_layout_merge_type (node))
+          switch (markon_menu_node_tree_get_layout_merge_type (node))
             {
-            case GARCON_MENU_LAYOUT_MERGE_ALL:
+            case MARKON_MENU_LAYOUT_MERGE_ALL:
               g_print ("<Merge type=\"all\"/>\n");
               break;
-            case GARCON_MENU_LAYOUT_MERGE_MENUS:
+            case MARKON_MENU_LAYOUT_MERGE_MENUS:
               g_print ("<Merge type=\"menus\"/>\n");
               break;
-            case GARCON_MENU_LAYOUT_MERGE_FILES:
+            case MARKON_MENU_LAYOUT_MERGE_FILES:
               g_print ("<Merge type=\"files\"/>\n");
               break;
             }
           break;
-        case GARCON_MENU_NODE_TYPE_MERGE_FILE:
+        case MARKON_MENU_NODE_TYPE_MERGE_FILE:
           INDENT;
-          switch (garcon_menu_node_tree_get_merge_file_type (node))
+          switch (markon_menu_node_tree_get_merge_file_type (node))
             {
-            case GARCON_MENU_MERGE_FILE_PATH:
+            case MARKON_MENU_MERGE_FILE_PATH:
               g_print ("<MergeFile type=\"path\">%s</MergeFile>\n",
-                       garcon_menu_node_tree_get_merge_file_filename (node));
+                       markon_menu_node_tree_get_merge_file_filename (node));
               break;
-            case GARCON_MENU_MERGE_FILE_PARENT:
+            case MARKON_MENU_MERGE_FILE_PARENT:
               g_print ("<MergeFile type=\"parent\"/>\n");
               break;
             }
           break;
-        case GARCON_MENU_NODE_TYPE_MERGE_DIR:
-          INDENT; g_print ("<MergeDir>%s</MergeDir>\n", garcon_menu_node_tree_get_string (node));
+        case MARKON_MENU_NODE_TYPE_MERGE_DIR:
+          INDENT; g_print ("<MergeDir>%s</MergeDir>\n", markon_menu_node_tree_get_string (node));
           break;
-        case GARCON_MENU_NODE_TYPE_DEFAULT_MERGE_DIRS:
+        case MARKON_MENU_NODE_TYPE_DEFAULT_MERGE_DIRS:
           INDENT; g_print ("<DefaultMergeDirs/>\n");
           break;
         default:
@@ -196,15 +196,15 @@ print_node (GNode    *node,
 
 
 static void
-print_tree (GarconMenuTreeProvider *provider)
+print_tree (MarkonMenuTreeProvider *provider)
 {
   GNode *tree;
 
-  g_return_if_fail (GARCON_IS_MENU_TREE_PROVIDER (provider));
+  g_return_if_fail (MARKON_IS_MENU_TREE_PROVIDER (provider));
 
-  tree = garcon_menu_tree_provider_get_tree (provider);
+  tree = markon_menu_tree_provider_get_tree (provider);
   print_node (tree, 0);
-  garcon_menu_node_tree_free (tree);
+  markon_menu_node_tree_free (tree);
 }
 
 
@@ -213,8 +213,8 @@ int
 main (int    argc,
       char **argv)
 {
-  GarconMenuParser *parser;
-  GarconMenuMerger *merger;
+  MarkonMenuParser *parser;
+  MarkonMenuMerger *merger;
   const gchar      *prefix;
   GError           *error = NULL;
   GFile            *file = NULL;
@@ -222,7 +222,7 @@ main (int    argc,
   gchar            *relative_filename;
   gint              result = EXIT_SUCCESS;
 
-  garcon_set_environment ("EXPIDUS");
+  markon_set_environment ("EXPIDUS");
 
   if (argc > 1)
     file = g_file_new_for_path (argv[1]);
@@ -234,7 +234,7 @@ main (int    argc,
                                        NULL);
 
       /* Search for the menu file */
-      filename = garcon_config_lookup (relative_filename);
+      filename = markon_config_lookup (relative_filename);
       if (G_UNLIKELY (filename != NULL))
         {
           /* Try to load the root menu from this file */
@@ -255,21 +255,21 @@ main (int    argc,
   g_print ("\nread menu from \"%s\"\n", filename);
   g_free (filename);
 
-  parser = garcon_menu_parser_new (file);
+  parser = markon_menu_parser_new (file);
   g_object_unref (file);
 
-  if (G_LIKELY (garcon_menu_parser_run (parser, NULL, &error)))
+  if (G_LIKELY (markon_menu_parser_run (parser, NULL, &error)))
     {
       g_print("\n\nafter parsing:\n\n");
 
-      print_tree (GARCON_MENU_TREE_PROVIDER (parser));
+      print_tree (MARKON_MENU_TREE_PROVIDER (parser));
 
-      merger = garcon_menu_merger_new (GARCON_MENU_TREE_PROVIDER (parser));
+      merger = markon_menu_merger_new (MARKON_MENU_TREE_PROVIDER (parser));
 
-      if (G_LIKELY (garcon_menu_merger_run (merger, NULL, NULL, NULL, &error)))
+      if (G_LIKELY (markon_menu_merger_run (merger, NULL, NULL, NULL, &error)))
         {
           g_print ("\n\nafter merging:\n\n");
-          print_tree (GARCON_MENU_TREE_PROVIDER (merger));
+          print_tree (MARKON_MENU_TREE_PROVIDER (merger));
         }
       else
         {

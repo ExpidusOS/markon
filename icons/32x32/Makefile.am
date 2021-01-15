@@ -4,4 +4,4 @@ EXTRA_DIST =				\
 Datadir = $(datadir)/icons/hicolor/32x32/apps
 
 Data_DATA =				\
-	com.expidus.garcon.png
+	com.expidus.markon.png

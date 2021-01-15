@@ -19,7 +19,7 @@
 
 AM_CPPFLAGS =								\
 	-I$(top_srcdir)							\
-	-DG_LOG_DOMAIN=\"garcon-tests\"
+	-DG_LOG_DOMAIN=\"markon-tests\"
 
 noinst_PROGRAMS =							\
 	test-menu-parser						\
@@ -37,14 +37,14 @@ test_menu_parser_CFLAGS =						\
 	$(GOBJECT_CFLAGS)
 
 test_menu_parser_DEPENDENCIES =						\
-	$(top_builddir)/garcon/libgarcon-$(GARCON_VERSION_API).la
+	$(top_builddir)/markon/libmarkon-$(MARKON_VERSION_API).la
 
 test_menu_parser_LDADD =						\
 	$(LIBEXPIDUS1UTIL_LIBS)						\
 	$(GIO_LIBS)							\
 	$(GLIB_LIBS)							\
 	$(GOBJECT_LIBS)							\
-	$(top_builddir)/garcon/libgarcon-$(GARCON_VERSION_API).la
+	$(top_builddir)/markon/libmarkon-$(MARKON_VERSION_API).la
 
 # test-menu-spec
 test_menu_spec_SOURCES =						\
@@ -57,14 +57,14 @@ test_menu_spec_CFLAGS =							\
 	$(GOBJECT_CFLAGS)
 
 test_menu_spec_DEPENDENCIES =						\
-	$(top_builddir)/garcon/libgarcon-$(GARCON_VERSION_API).la
+	$(top_builddir)/markon/libmarkon-$(MARKON_VERSION_API).la
 
 test_menu_spec_LDADD =							\
 	$(LIBEXPIDUS1UTIL_LIBS)						\
 	$(GIO_LIBS)							\
 	$(GLIB_LIBS)							\
 	$(GOBJECT_LIBS)							\
-	$(top_builddir)/garcon/libgarcon-$(GARCON_VERSION_API).la
+	$(top_builddir)/markon/libmarkon-$(MARKON_VERSION_API).la
 
 # test-display-menu-gtk3
 test_display_menu_gtk3_SOURCES =				\
@@ -78,7 +78,7 @@ test_display_menu_gtk3_CFLAGS =					\
 	$(GTK3_CFLAGS)
 
 test_display_menu_gtk3_DEPENDENCIES =				\
-	$(top_builddir)/garcon/libgarcon-1.la
+	$(top_builddir)/markon/libmarkon-1.la
 
 test_display_menu_gtk3_LDADD =					\
 	$(LIBEXPIDUS1UTIL_LIBS)						\
@@ -86,5 +86,5 @@ test_display_menu_gtk3_LDADD =					\
 	$(GLIB_LIBS)							\
 	$(GOBJECT_LIBS)							\
 	$(GTK3_LIBS)							\
-	$(top_builddir)/garcon/libgarcon-$(GARCON_VERSION_API).la	\
-	$(top_builddir)/garcon-gtk/libgarcon-gtk3-1.la
+	$(top_builddir)/markon/libmarkon-$(MARKON_VERSION_API).la	\
+	$(top_builddir)/markon-gtk/libmarkon-gtk3-1.la

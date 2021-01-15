@@ -9,12 +9,12 @@
 # Walter Cheuk <wwycheuk@gmail.com>, 2013,2019
 msgid ""
 msgstr ""
-"Project-Id-Version: Garcon\n"
+"Project-Id-Version: Markon\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-20 18:30+0200\n"
 "PO-Revision-Date: 2019-09-12 03:37+0000\n"
 "Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/expidus/garcon/language/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/expidus/markon/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -133,40 +133,40 @@ msgstr "系統"
 msgid "System tools and utilities"
 msgstr "系統工具與公用程式"
 
-#: ../garcon/garcon-menu.c:702
+#: ../markon/markon-menu.c:702
 #, c-format
 msgid "File \"%s\" not found"
 msgstr "找不到「%s」檔案"
 
-#: ../garcon/garcon-menu-parser.c:276
+#: ../markon/markon-menu-parser.c:276
 #, c-format
 msgid "Could not load menu file data from %s: %s"
 msgstr "無法從 %s 載入選單檔資料：%s"
 
-#: ../garcon/garcon-menu-parser.c:283
+#: ../markon/markon-menu-parser.c:283
 #, c-format
 msgid "Could not load menu file data from %s"
 msgstr "無法從 %s 載入選單檔資料"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:446
+#: ../markon-gtk/markon-gtk-menu.c:446
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "未能執行「%s」指令。"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:472
+#: ../markon-gtk/markon-gtk-menu.c:472
 msgid "Launch Error"
 msgstr "啟動發生錯誤"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:474
+#: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
 "Unable to launch \"exo-desktop-item-edit\", which is required to create and "
 "edit menu items."
 msgstr "無法啟動「exo-desktop-item-edit」，此為建立及編輯選單項目所必需。"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:476
+#: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"
 msgstr "關閉(_C)"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:988
+#: ../markon-gtk/markon-gtk-menu.c:988
 msgid "Failed to load the applications menu"
 msgstr "未能載入應用程式選單"

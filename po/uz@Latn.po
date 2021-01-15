@@ -6,12 +6,12 @@
 # U A <u.almasov@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Garcon\n"
+"Project-Id-Version: Markon\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-20 18:30+0200\n"
 "PO-Revision-Date: 2017-09-19 23:10+0000\n"
 "Last-Translator: Expidus Bot <transifex@expidus.org>\n"
-"Language-Team: Uzbek (Latin) (http://www.transifex.com/expidus/garcon/language/uz@Latn/)\n"
+"Language-Team: Uzbek (Latin) (http://www.transifex.com/expidus/markon/language/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,40 +130,40 @@ msgstr "Tizim"
 msgid "System tools and utilities"
 msgstr "Tizim vositalari va utilitalar"
 
-#: ../garcon/garcon-menu.c:702
+#: ../markon/markon-menu.c:702
 #, c-format
 msgid "File \"%s\" not found"
 msgstr "\"%s\" fayli topilmadi"
 
-#: ../garcon/garcon-menu-parser.c:276
+#: ../markon/markon-menu-parser.c:276
 #, c-format
 msgid "Could not load menu file data from %s: %s"
 msgstr "Menyu faylining ma'lumotini %s dan yuklab bo'lmadi: %s"
 
-#: ../garcon/garcon-menu-parser.c:283
+#: ../markon/markon-menu-parser.c:283
 #, c-format
 msgid "Could not load menu file data from %s"
 msgstr "Menyu faylining ma'lumotini %s dan yuklab bo'lmadi"
 
-#: ../garcon-gtk/garcon-gtk-menu.c:446
+#: ../markon-gtk/markon-gtk-menu.c:446
 #, c-format
 msgid "Failed to execute command \"%s\"."
 msgstr "\"%s\" buyrug'ini bajarish muvaffaqiyatsiz tugadi."
 
-#: ../garcon-gtk/garcon-gtk-menu.c:472
+#: ../markon-gtk/markon-gtk-menu.c:472
 msgid "Launch Error"
 msgstr ""
 
-#: ../garcon-gtk/garcon-gtk-menu.c:474
+#: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
 "Unable to launch \"exo-desktop-item-edit\", which is required to create and "
 "edit menu items."
 msgstr ""
 
-#: ../garcon-gtk/garcon-gtk-menu.c:476
+#: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"
 msgstr ""
 
-#: ../garcon-gtk/garcon-gtk-menu.c:988
+#: ../markon-gtk/markon-gtk-menu.c:988
 msgid "Failed to load the applications menu"
 msgstr "Dasturlar menyusini yuklash muvaffaqiyatsiz tugadi"

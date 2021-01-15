@@ -21,19 +21,19 @@ dnl Boston, MA 02110-1301, USA.
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-m4_define([garcon_verinfo], [0:0:0])
-m4_define([garcon_version_api_major], [1])
-m4_define([garcon_version_major], [1])
-m4_define([garcon_version_minor], [0])
-m4_define([garcon_version_micro], [0])
-m4_define([garcon_version_build], [@REVISION@])
-m4_define([garcon_version_tag], [git])
-m4_define([garcon_version], [garcon_version_major().garcon_version_minor().garcon_version_micro()ifelse(garcon_version_tag(), [git], [garcon_version_tag()-garcon_version_build()], [garcon_version_tag()])])
+m4_define([markon_verinfo], [0:0:0])
+m4_define([markon_version_api_major], [1])
+m4_define([markon_version_major], [1])
+m4_define([markon_version_minor], [0])
+m4_define([markon_version_micro], [0])
+m4_define([markon_version_build], [@REVISION@])
+m4_define([markon_version_tag], [git])
+m4_define([markon_version], [markon_version_major().markon_version_minor().markon_version_micro()ifelse(markon_version_tag(), [git], [markon_version_tag()-markon_version_build()], [markon_version_tag()])])
 
 dnl ********************************************
 dnl *** Full debug support for GIT snapshots ***
 dnl ********************************************
-m4_define([garcon_debug_default], [ifelse(garcon_version_tag(), [git], [yes], [minimum])])
+m4_define([markon_debug_default], [ifelse(markon_version_tag(), [git], [yes], [minimum])])
 
 dnl ****************************
 dnl *** For intltool support ***
@@ -46,7 +46,7 @@ dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2007-2011 Jannis Pohlmann <jannis@expidus.org>
 Copyright (c) 2012-2020 The ExpidusOS and XFCE development team
               ])
-AC_INIT([garcon], [garcon_version], [https://gitlab.expidus.org/expidus/garcon])
+AC_INIT([markon], [markon_version], [https://gitlab.expidus.org/expidus/markon])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
 AC_REVISION([@REVISION@])
@@ -63,22 +63,22 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 dnl **************************
 dnl *** Libtool versioning ***
 dnl **************************
-GARCON_VERINFO=garcon_verinfo()
-AC_SUBST([GARCON_VERINFO])
+MARKON_VERINFO=markon_verinfo()
+AC_SUBST([MARKON_VERINFO])
 
 dnl ****************************
-dnl *** Subst garcon version ***
+dnl *** Subst markon version ***
 dnl ****************************
-GARCON_VERSION_MAJOR=garcon_version_major()
-GARCON_VERSION_MINOR=garcon_version_minor()
-GARCON_VERSION_MICRO=garcon_version_micro()
-GARCON_VERSION_API_MAJOR=garcon_version_api_major()
-GARCON_VERSION_API=$GARCON_VERSION_API_MAJOR
-AC_SUBST([GARCON_VERSION_MAJOR])
-AC_SUBST([GARCON_VERSION_MINOR])
-AC_SUBST([GARCON_VERSION_MICRO])
-AC_SUBST([GARCON_VERSION_API_MAJOR])
-AC_SUBST([GARCON_VERSION_API])
+MARKON_VERSION_MAJOR=markon_version_major()
+MARKON_VERSION_MINOR=markon_version_minor()
+MARKON_VERSION_MICRO=markon_version_micro()
+MARKON_VERSION_API_MAJOR=markon_version_api_major()
+MARKON_VERSION_API=$MARKON_VERSION_API_MAJOR
+AC_SUBST([MARKON_VERSION_MAJOR])
+AC_SUBST([MARKON_VERSION_MINOR])
+AC_SUBST([MARKON_VERSION_MICRO])
+AC_SUBST([MARKON_VERSION_API_MAJOR])
+AC_SUBST([MARKON_VERSION_API])
 
 dnl ********************************
 dnl *** Check for basic programs ***
@@ -138,7 +138,7 @@ GOBJECT_INTROSPECTION_CHECK([1.50.0])
 dnl ***********************************
 dnl *** Check for debugging support ***
 dnl ***********************************
-XDT_FEATURE_DEBUG([garcon_debug_default])
+XDT_FEATURE_DEBUG([markon_debug_default])
 
 dnl **************************************
 dnl *** Check for linker optimizations ***
@@ -152,11 +152,11 @@ data/expidus/Makefile
 docs/Makefile
 docs/reference/Makefile
 docs/reference/version.xml
-garcon/Makefile
-garcon/garcon-1.pc
-garcon/garcon-config.h
-garcon-gtk/Makefile
-garcon-gtk/garcon-gtk3-1.pc
+markon/Makefile
+markon/markon-1.pc
+markon/markon-config.h
+markon-gtk/Makefile
+markon-gtk/markon-gtk3-1.pc
 icons/Makefile
 icons/32x32/Makefile
 po/Makefile.in
