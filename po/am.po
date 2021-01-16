@@ -156,9 +156,9 @@ msgstr "ስህተት ማስነሻ"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "\"exo-desktop-item-edit\"ን ማስነሳት አልተቻለም: ይህ አካል አስነሺዎችን ለ መፍጠር እና ለማረም እና ከ ዴስክቶፕ ጋር ለማገናኘት ያስፈልጋል"
+msgstr "\"endo-desktop-item-edit\"ን ማስነሳት አልተቻለም: ይህ አካል አስነሺዎችን ለ መፍጠር እና ለማረም እና ከ ዴስክቶፕ ጋር ለማገናኘት ያስፈልጋል"
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

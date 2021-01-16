@@ -163,9 +163,9 @@ msgstr "Error de ejecución"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "No se puede ejecutar «exo-desktop-item-edit», que es imprescindible para crear y editar elementos del menú"
+msgstr "No se puede ejecutar «endo-desktop-item-edit», que es imprescindible para crear y editar elementos del menú"
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

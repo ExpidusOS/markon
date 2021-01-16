@@ -157,9 +157,9 @@ msgstr "Գործարկման սխալ"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Չյաջողուեց գործարկել «exo-desktop-item-edit»֊ը, որը պահանջուում է ցանկերի ստեղծման եւ խմբագրման համար։"
+msgstr "Չյաջողուեց գործարկել «endo-desktop-item-edit»֊ը, որը պահանջուում է ցանկերի ստեղծման եւ խմբագրման համար։"
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

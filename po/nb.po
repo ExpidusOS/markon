@@ -159,9 +159,9 @@ msgstr "Feil ved programstart"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Klarte ikke å starte «exo-desktop-item-edit», som er påkrevd for opprette eller redigere menyelementer."
+msgstr "Klarte ikke å starte «endo-desktop-item-edit», som er påkrevd for opprette eller redigere menyelementer."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

@@ -34,7 +34,7 @@
 - Field codes expansion API update
 - Transfer some code to libexpidus1util
 - Fix default merge rules in expidus-applications.menu (Bug #15504)
-- Rename exo-helpers to the new expidus1-xx ones
+- Rename endo-helpers to the new expidus1-xx ones
 - Do not add INSTALL in dist tarball
 - Fix a memory leak
 - Switch to README.md and foreign automake mode

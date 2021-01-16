@@ -159,9 +159,9 @@ msgstr "啟動發生錯誤"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "無法啟動「exo-desktop-item-edit」，此為建立及編輯選單項目所必需。"
+msgstr "無法啟動「endo-desktop-item-edit」，此為建立及編輯選單項目所必需。"
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

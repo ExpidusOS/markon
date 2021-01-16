@@ -158,9 +158,9 @@ msgstr "Startfeil"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Kunne ikkje starte «exo-desktop-item-edit» som krevast for å opprette og redigere menyobjekt."
+msgstr "Kunne ikkje starte «endo-desktop-item-edit» som krevast for å opprette og redigere menyobjekt."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

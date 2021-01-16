@@ -161,9 +161,9 @@ msgstr "שגיאת מפעיל"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "לא ניתן להפעיל את \"exo-desktop-item-edit\", שנדרש ליצירה ולעריכה של פריטי תפריט."
+msgstr "לא ניתן להפעיל את \"endo-desktop-item-edit\", שנדרש ליצירה ולעריכה של פריטי תפריט."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

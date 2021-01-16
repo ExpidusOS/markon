@@ -157,9 +157,9 @@ msgstr "Villa í ræsingu"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Tókst ekki að keyra \"exo-desktop-item-edit\", sem er forsenda þess að hægt sé að búa til og breyta færslum í valmyndum."
+msgstr "Tókst ekki að keyra \"endo-desktop-item-edit\", sem er forsenda þess að hægt sé að búa til og breyta færslum í valmyndum."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

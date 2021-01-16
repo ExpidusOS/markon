@@ -157,9 +157,9 @@ msgstr "Chyba pri spustení"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Nie je možné spustiť \"exo-desktop-item-edit\". Táto aplikácia je vyžadovaná pri vytváraní a úpravu položiek ponuky."
+msgstr "Nie je možné spustiť \"endo-desktop-item-edit\". Táto aplikácia je vyžadovaná pri vytváraní a úpravu položiek ponuky."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

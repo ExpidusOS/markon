@@ -159,9 +159,9 @@ msgstr "Грешка покретања"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Нисам успео покренути „exo-desktop-item-edit“, што је неопходно за стварање и уређивање ставки изборника."
+msgstr "Нисам успео покренути „endo-desktop-item-edit“, што је неопходно за стварање и уређивање ставки изборника."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

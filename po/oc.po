@@ -157,9 +157,9 @@ msgstr "Error al moment de l'aviada"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Impossible d’aviar « exo-desktop-item-edit », qu’es necessari a la creacion e l’edicion dels aviadors e dels ligams sul burèu."
+msgstr "Impossible d’aviar « endo-desktop-item-edit », qu’es necessari a la creacion e l’edicion dels aviadors e dels ligams sul burèu."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

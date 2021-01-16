@@ -156,9 +156,9 @@ msgstr "실행 오류"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "데스크톱에 실행 아이콘과 링크를 만들고 수정하는데 필요한 \"exo-desktop-item-edit\"을 실행하지 못했습니다."
+msgstr "데스크톱에 실행 아이콘과 링크를 만들고 수정하는데 필요한 \"endo-desktop-item-edit\"을 실행하지 못했습니다."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

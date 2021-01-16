@@ -159,9 +159,9 @@ msgstr "Error de llançament"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "No es pot llançar «exo-desktop-item-edit», el qual es requereix per crear i editar els elements del menú."
+msgstr "No es pot llançar «endo-desktop-item-edit», el qual es requereix per crear i editar els elements del menú."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

@@ -158,9 +158,9 @@ msgstr "Paleidimo klaida"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Nepavyko paleisti „exo-desktop-item-edit“, kuris yra reikalingas, norint kurti ir redaguoti meniu elementus."
+msgstr "Nepavyko paleisti „endo-desktop-item-edit“, kuris yra reikalingas, norint kurti ir redaguoti meniu elementus."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

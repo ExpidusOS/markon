@@ -156,9 +156,9 @@ msgstr "ข้อผิดพลาดในการเรียกทำงา
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "ไม่สามารถเรียกทำงาน \"exo-desktop-item-edit\" ซึ่งจำเป็นในการสร้างและแก้ไขรายการเมนูต่างๆ"
+msgstr "ไม่สามารถเรียกทำงาน \"endo-desktop-item-edit\" ซึ่งจำเป็นในการสร้างและแก้ไขรายการเมนูต่างๆ"
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

@@ -159,9 +159,9 @@ msgstr "Σφάλμα εκκίνησης"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Αδυναμία εκίνησης του \"exo-desktop-item-edit\", το οποίο είναι απαραίτητο για τη δημιουργία και επεξεργασία αντικειμένων των μενού."
+msgstr "Αδυναμία εκίνησης του \"endo-desktop-item-edit\", το οποίο είναι απαραίτητο για τη δημιουργία και επεξεργασία αντικειμένων των μενού."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

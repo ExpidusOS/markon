@@ -158,9 +158,9 @@ msgstr "Eroare de lansare"
 
 #: ../markon-gtk/markon-gtk-menu.c:474
 msgid ""
-"Unable to launch \"exo-desktop-item-edit\", which is required to create and "
+"Unable to launch \"endo-desktop-item-edit\", which is required to create and "
 "edit menu items."
-msgstr "Nu se poate lansa \"exo-desktop-item-edit\", care este necesar pentru a crea și edita elemente de meniu."
+msgstr "Nu se poate lansa \"endo-desktop-item-edit\", care este necesar pentru a crea și edita elemente de meniu."
 
 #: ../markon-gtk/markon-gtk-menu.c:476
 msgid "_Close"

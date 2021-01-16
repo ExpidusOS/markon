@@ -398,14 +398,14 @@ markon_gtk_menu_item_edit_launcher (MarkonMenuItem *item)
   if (file)
     {
       uri = g_file_get_uri (file);
-      cmd = g_strdup_printf ("exo-desktop-item-edit \"%s\"", uri);
+      cmd = g_strdup_printf ("endo-desktop-item-edit \"%s\"", uri);
 
       if (!expidus_spawn_command_line (NULL, cmd, FALSE, FALSE, TRUE, &error))
         {
           expidus_message_dialog (NULL,
                                _("Launch Error"),
                                "dialog-error",
-                              _("Unable to launch \"exo-desktop-item-edit\", which is required to create and edit menu items."),
+                              _("Unable to launch \"endo-desktop-item-edit\", which is required to create and edit menu items."),
                               error->message,
                               EXPIDUS_BUTTON_TYPE_MIXED, "window-close-symbolic", _("_Close"), GTK_RESPONSE_ACCEPT,
                               NULL);
