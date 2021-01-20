@@ -100,5 +100,7 @@ markon_set_environment_xdg (const gchar *fallback_env)
   else if (*desktop == '\0')
     desktop = NULL;
 
+  if (!g_strcmp0(desktop, "ExpidusOS Shell")) desktop = "EXPIDUS";
+
   markon_set_environment (desktop);
 }
